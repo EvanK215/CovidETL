@@ -26,6 +26,7 @@ CREATE TABLE "population" (
 
 CREATE TABLE "mask_usage" (
     "county_fips" VARCHAR   NOT NULL,
+    "state_fips" VARCHAR   NOT NULL,
     "never" FLOAT   NOT NULL,
     "rarely" FLOAT   NOT NULL,
     "sometimes" FLOAT   NOT NULL,
@@ -35,6 +36,7 @@ CREATE TABLE "mask_usage" (
 
 CREATE TABLE "cases_death" (
     "county_fips" VARCHAR   NOT NULL,
+    "state_fips" VARCHAR   NOT NULL,
     "cases_num" INTEGER   NOT NULL,
     "deaths_num" INTEGER   NOT NULL
 );
