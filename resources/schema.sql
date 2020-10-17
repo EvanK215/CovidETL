@@ -41,21 +41,18 @@ CREATE TABLE "cases_death" (
     "deaths_num" INTEGER   NOT NULL
 );
 
-ALTER TABLE "state" ADD CONSTRAINT "fk_state_state_fips" FOREIGN KEY("state_fips")
-REFERENCES "population" ("state_fips");
-
 ALTER TABLE "county_state" ADD CONSTRAINT "fk_county_state_county_fips" FOREIGN KEY("county_fips")
 REFERENCES "county" ("county_fips");
 
 ALTER TABLE "county_state" ADD CONSTRAINT "fk_county_state_state_fips" FOREIGN KEY("state_fips")
 REFERENCES "state" ("state_fips");
 
-ALTER TABLE "county" ADD CONSTRAINT "fk_county_county_fips" FOREIGN KEY("county_fips")
-REFERENCES "cases_death" ("county_fips");
+ALTER TABLE "population" ADD CONSTRAINT "fk_population_county_fips_state_fips" FOREIGN KEY("county_fips", "state_fips")
+REFERENCES "county_state" ("county_fips", "state_fips");
 
-ALTER TABLE "population" ADD CONSTRAINT "fk_population_county_fips" FOREIGN KEY("county_fips")
-REFERENCES "county" ("county_fips");
+ALTER TABLE "mask_usage" ADD CONSTRAINT "fk_mask_usage_county_fips_state_fips" FOREIGN KEY("county_fips", "state_fips")
+REFERENCES "county_state" ("county_fips", "state_fips");
 
-ALTER TABLE "mask_usage" ADD CONSTRAINT "fk_mask_usage_county_fips" FOREIGN KEY("county_fips")
-REFERENCES "county" ("county_fips");
+ALTER TABLE "cases_death" ADD CONSTRAINT "fk_cases_death_county_fips_state_fips" FOREIGN KEY("county_fips", "state_fips")
+REFERENCES "county_state" ("county_fips", "state_fips");
 
