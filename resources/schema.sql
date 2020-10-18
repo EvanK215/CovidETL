@@ -20,25 +20,25 @@ CREATE TABLE "county" (
 
 CREATE TABLE "population" (
     "county_fips" VARCHAR   NOT NULL,
-    "state_fips" VARCHAR   NOT NULL,
+    "state_fips" INTEGER   NOT NULL,
     "2019_population" VARCHAR   NOT NULL
 );
 
 CREATE TABLE "mask_usage" (
     "county_fips" VARCHAR   NOT NULL,
-    "state_fips" VARCHAR   NOT NULL,
-    "never" FLOAT   NOT NULL,
-    "rarely" FLOAT   NOT NULL,
-    "sometimes" FLOAT   NOT NULL,
-    "frequenty" FLOAT   NOT NULL,
-    "always" FLOAT   NOT NULL
+    "state_fips" INTEGER   NOT NULL,
+    "never" VARCHAR   NOT NULL,
+    "rarely" VARCHAR   NOT NULL,
+    "sometimes" VARCHAR   NOT NULL,
+    "frequenty" VARCHAR   NOT NULL,
+    "always" VARCHAR   NOT NULL
 );
 
 CREATE TABLE "cases_death" (
     "county_fips" VARCHAR   NOT NULL,
-    "state_fips" VARCHAR   NOT NULL,
-    "cases_num" INTEGER   NOT NULL,
-    "deaths_num" INTEGER   NOT NULL
+    "state_fips" INTEGER   NOT NULL,
+    "cases" INTEGER   NOT NULL,
+    "deaths" FLOAT   NOT NULL
 );
 
 ALTER TABLE "county_state" ADD CONSTRAINT "fk_county_state_county_fips" FOREIGN KEY("county_fips")
@@ -55,4 +55,3 @@ REFERENCES "county_state" ("county_fips", "state_fips");
 
 ALTER TABLE "cases_death" ADD CONSTRAINT "fk_cases_death_county_fips_state_fips" FOREIGN KEY("county_fips", "state_fips")
 REFERENCES "county_state" ("county_fips", "state_fips");
-
