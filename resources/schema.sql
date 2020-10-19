@@ -3,19 +3,19 @@
 -- NOTE! If you have used non-SQL datatypes in your design, you will have to change these here.
 
 
+CREATE TABLE "county" (
+    "county_fips" VARCHAR   NOT NULL,
+    "county_name" VARCHAR   NOT NULL
+);
+
 CREATE TABLE "state" (
-    "state_fips" VARCHAR   NOT NULL,
+    "state_fips" VARCHAR  NOT NULL,
     "state_name" VARCHAR   NOT NULL
 );
 
 CREATE TABLE "county_state" (
     "county_fips" VARCHAR   NOT NULL,
     "state_fips" VARCHAR   NOT NULL
-);
-
-CREATE TABLE "county" (
-    "county_fips" VARCHAR   NOT NULL,
-    "county_name" VARCHAR   NOT NULL
 );
 
 CREATE TABLE "population" (
