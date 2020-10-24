@@ -4,32 +4,86 @@
 <head>
     <meta charset="UTF-8">
     <title>Covid ETL</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+        integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+        crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../style.css">
 </head>
 
 <body>
 
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Group 5: Covid-19 ETL</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item active">
+                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="#">Data Sources & Files</a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="#">ERD & Data Dictionary</a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="#">Team Bios</a>
+              </li>
+              </ul>
+        </div>
+    </nav>
     <div class="jumbotron text-center jumbotron-fluid">
         <div class="container">
-          <h1 class="display-4">Covid ETL</h1>
-          <p class="lead">Using New York Times and Census data to track Coronavirus</p>
+            <h1 class="display-4">Covid ETL</h1>
+            <p class="lead">Using New York Times and Census data to track Coronavirus</p>
         </div>
     </div>
 
     <div class="container">
         <div class="row">
-          <div class="col-xs-12">
-              <div class="card">
-                  <div class="card-body">
-                      <h3 class="card-title">Project Description</h3>
+            <div class="col-md-12">
+                <div class="card">
+                    <!-- <img src="images/nyt_maskusage_map.png" class="float-left mr-2 mt-1" href="https://www.nytimes.com/interactive/2020/07/17/upshot/coronavirus-face-mask-map.html" alt="NYT Heatmap from Mask-Usage Data"/> -->
+                    <div class="card-body">
+                        <h3 class="card-title">Project Description</h3>
+                        <p>Since Covid-19 came to the US in early 2020, the New York Times ("NYT") has been tracking
+                            data
+                            related to cases and deaths at the county level. For this project, we wanted to integrate
+                            these findings with data from the US Census to provide data analysts a resource for
+                            confirmed case and death numbers at the state and local level, as well as the impact of
+                            estimated mask-usage on cases and deaths in a given population.</p>
+                        <p>Our database can be used to find data from the state or county level. It contains information
+                            about the number of cases and the number of deaths, and can be controlled for population
+                            using the estimated 2019 US Census Data. The estimated mask-usage data can be used to
+                            predict the effect of mask-usage at the state or county level. </p>
+                        <h3>Potential Questions for Analysis:</h3>
+                        <ul>Is there a correlation between mask-usage and the number of cases by county?</ul>
+                        <ul>Is there a correlation between mask-usage and the number of deaths by county?</ul>
+                        <ul>Is there a correlation between mask-usage and the number of cases by state?</ul>
+                        <ul>Is there a correlation between mask-usage and the number of deaths by state?</ul>
+                        <ul>How many cases are there per 100,000 people by county?</ul>
+                        <ul>How many cases are there per 100,000 people by state?</ul>
+                        <ul>Is there a correlation between mask-usage and the population of a county?</ul>
+                        <h3>Limitation of Mask-Usage Data</h3>
+                        <p>The survey that was performed to determine the estimated mask-usage
+                            numbers was performed from July 2- July 14 in 2020 with approximately 250,000 respondents.
+                            The ability to extrapolate from these numbers is therefore limited based on the time period.
+                            Data presented includes numbers only from July 14 onward. To read the NYT documentation on
+                            how this study was conducted, click <a
+                                href="https://github.com/nytimes/covid-19-data/tree/master/mask-use">here</a>.</p>
+
                     </div>
                 </div>
             </div>
         </div>
     </div>
-     
-    
+
+
 </body>
