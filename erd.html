@@ -11,6 +11,28 @@
 </head>
 
 <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="index.html">Group 5: Covid-19 ETL</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item active">
+                <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="data.html">Data Sources & Files</a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="erd.html">ERD & Data Dictionary</a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="team.html">Team Bios</a>
+              </li>
+              </ul>
+        </div>
+    </nav>
 
     <div class="jumbotron text-center jumbotron-fluid">
         <div class="container">
@@ -20,10 +42,24 @@
         
 
     </div>
-    <section>
-        <p class="lead">Below ERD was generated for this database.</p>
-        <a target="-ERD" href="static/images/Updated ETL ERD.PNG">
-            <img src="static/images/Updated ETL ERD.PNG" alt=ERD>
-        </a>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="card-title">Entity Relational Diagram</h3>
+                        <p class="lead">Below ERD was generated for this database. Click on image to view SQL schema file.</p>
+                        
+                            <a target="-ERD" href="resources/schema.sql">
+                                <img src="static/images/Updated ETL ERD.PNG" alt=ERD>
+                            </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+                
 
-    </section>
+    
+</body>
+</html>
