@@ -44,18 +44,18 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-body">
-                        <h3> Raw Data</h3>
+                        <h3> Raw Data - Extract</h3>
                         <p> Data for covid cases, covid deaths and mask use by County and State have been sourced from both New York Times csv hosted on Newspaper's github <a href="https://github.com/nytimes/covid-19-data"> page </a>
                         while population data by County and State was obtained from US Census <a href="RawData/county_census.csv"> csv </a> 
                         </p>
-                        <h3> Data Cleanup</h3>
+                        <h3> Data Cleanup - Transform</h3>
                         <p>Team used Jupyter notebook to cleanup raw data. The cleanup process include droping of columns not needed, joining of columns and filtering of rows. Two Jupyter notebooks were used to clean data see links for details of code
                             <li><a href="https://github.com/EvanK215/CovidETL/blob/main/CleanData/cleantables.ipynb"> cleantables </a></li>
                             <li><a href="https://github.com/EvanK215/CovidETL/blob/main/CleanData/geocodes.ipynb"> geocodes </a></li>
                         Production database is relational using postgres and hosted on the AWS. 
 
                         </p>
-                        <h3>Clean Data</h3>
+                        <h3>Clean Data - Load</h3>
                         <p> 6 relational tables were produced from data cleanup to include primary and foreign keys see link below for csv files.
                             <li><a href="https://github.com/EvanK215/CovidETL/tree/main/CleanData"> cleantables </a></li>
 
