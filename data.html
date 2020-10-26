@@ -45,11 +45,11 @@
                 <div class="card">
                     <div class="card-body">
                         <h3> Raw Data</h3>
-                        <p class="lead"> Data for covid cases, covid deaths and mask use by County and State have been sourced from both New York Times csv hosted on Newspaper's github <a href="https://github.com/nytimes/covid-19-data"> page </a>
+                        <p> Data for covid cases, covid deaths and mask use by County and State have been sourced from both New York Times csv hosted on Newspaper's github <a href="https://github.com/nytimes/covid-19-data"> page </a>
                         while population data by County and State was obtained from US Census <a href="RawData/county_census.csv"> csv </a> 
                         </p>
                         <h3> Data Cleanup</h3>
-                        <p class="lead">Team used Jupyter notebook to cleanup raw data. The cleanup process include droping of columns not needed, joining of columns and filtering of rows. Two Jupyter notebooks were used to clean data see links for details of code
+                        <p>Team used Jupyter notebook to cleanup raw data. The cleanup process include droping of columns not needed, joining of columns and filtering of rows. Two Jupyter notebooks were used to clean data see links for details of code
                             <li><a href="https://github.com/EvanK215/CovidETL/blob/main/CleanData/cleantables.ipynb"> cleantables </a></li>
                             <li><a href="https://github.com/EvanK215/CovidETL/blob/main/CleanData/geocodes.ipynb"> geocodes </a></li>
                         Production database is relational using postgres and hosted on the AWS. 
@@ -60,12 +60,202 @@
                             <li><a href="https://github.com/EvanK215/CovidETL/tree/main/CleanData"> cleantables </a></li>
 
                         </p>
+                        <h3>Data Dictionary</h3>
+                    <table border="1"> 
+                        <thead>
+                            <tr>
+                                <th colspan="8"> Definition of data in tables</th>
+                            </tr>
+                            <tr>
+                                <th> Name of Table </th>
+                                <th> Column Name </th>
+                                <th> Description </th>
+                                <th> Data type </th>
+                                <th> Character length </th>
+                                <th> Accepts null value </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>cases_death</td>
+                                <td>county_fips</td>
+                                <td>Unique code for Counties in the Country</td>
+                                <td>Varchar</td>
+                                <td>255</td>
+                                <td>n</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>state_fips</td>
+                                <td>Unique code for States in the Country</td>
+                                <td>Integer</td>
+                                <td>10</td>
+                                <td>n</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>cases</td>
+                                <td>Number of covid cases in county</td>
+                                <td>Integer</td>
+                                <td>10</td>
+                                <td>n</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>deaths</td>
+                                <td>Number of covid deaths in county</td>
+                                <td>Integer</td>
+                                <td>10</td>
+                                <td>n</td>
+                            </tr>
+                            <tr>
+                                <td>county</td>
+                                <td>county_fips</td>
+                                <td>Name for Counties in the Country</td>
+                                <td>Varchar</td>
+                                <td>255</td>
+                                <td>n</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>county_name</td>
+                                <td>Name of Counties in the Country</td>
+                                <td>Varchar</td>
+                                <td>255</td>
+                                <td>n</td>
+                            </tr>
+                            <tr>
+                                <td>county_state</td>
+                                <td>county_fips</td>
+                                <td>Unique code for Counties in the Country</td>
+                                <td>Varchar</td>
+                                <td>255</td>
+                                <td>n</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>state_fips</td>
+                                <td>Unique code for States in the Country</td>
+                                <td>Varchar</td>
+                                <td>255</td>
+                                <td>n</td>
+                            </tr>
+                            <tr>
+                                <td>mask_usage</td>
+                                <td>county_fips</td>
+                                <td>Unique code for Counties in the Country</td>
+                                <td>Varchar</td>
+                                <td>255</td>
+                                <td>n</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>state_fips</td>
+                                <td>Unique code for States in the Country</td>
+                                <td>Integer</td>
+                                <td>10</td>
+                                <td>n</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>never</td>
+                                <td>Percent of respondents who never wear a mask</td>
+                                <td>Varchar</td>
+                                <td>255</td>
+                                <td>n</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>rarely</td>
+                                <td>Percent of respondents who rarely wear a mask</td>
+                                <td>Varchar</td>
+                                <td>255</td>
+                                <td>n</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>sometimes</td>
+                                <td>Percent of respondents who sometimes wear a mask</td>
+                                <td>Varchar</td>
+                                <td>255</td>
+                                <td>n</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>frequently</td>
+                                <td>Percent of respondents who frequently wear a mask</td>
+                                <td>Varchar</td>
+                                <td>255</td>
+                                <td>n</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>always</td>
+                                <td>Percent of respondents who always wear a mask</td>
+                                <td>Varchar</td>
+                                <td>255</td>
+                                <td>n</td>
+                            </tr>
+                            <tr>
+                                <td>population</td>
+                                <td>county_fips</td>
+                                <td>Unique code for Counties in the Country</td>
+                                <td>Varchar</td>
+                                <td>255</td>
+                                <td>n</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>state_fips</td>
+                                <td>Unique code for States in the Country</td>
+                                <td>Integer</td>
+                                <td>10</td>
+                                <td>n</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>state_fips</td>
+                                <td>Unique code for States in the Country</td>
+                                <td>Integer</td>
+                                <td>10</td>
+                                <td>n</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>2019_population</td>
+                                <td>Population count of County based on 2019 forecast by the US Census Board</td>
+                                <td>Integer</td>
+                                <td>10</td>
+                                <td>n</td>
+                            </tr>
+                            <tr>
+                                <td>state</td>
+                                <td>state_fips</td>
+                                <td>Unique code for States in the Country</td>
+                                <td>Integer</td>
+                                <td>10</td>
+                                <td>n</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>state_name</td>
+                                <td>Name of States in the Country</td>
+                                <td>Varchar</td>
+                                <td>255</td>
+                                <td>n</td>
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+            
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
-    </section>
+    
+                  
+          
 </body>
 </html>
